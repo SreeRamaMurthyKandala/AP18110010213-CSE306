@@ -31,7 +31,7 @@ void store_symb_tab(char id[], char symb_tab[][30])
 		if(!strcmp(symb_tab[i],id))
 			return;
 	if(i==20)
-	{ printf("Overflow!"); return;}// create linked list to avoid this
+	{ printf("\nOverflow!"); return;}// create linked list to avoid this
 	strcpy(symb_tab[i],id); //adds id to symb_tab
 }
 
@@ -162,7 +162,7 @@ int main()
 		}//End of switch
 	}//end of while
 	if(state==11)
-		fprintf(fp2,"comment did not close");
+		fprintf(fp2,"\ncomment did not close");
 	fclose(fp1);
 	fclose(fp2);
 	// To print symbol table remove these comments

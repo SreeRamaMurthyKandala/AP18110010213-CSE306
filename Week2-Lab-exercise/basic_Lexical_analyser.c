@@ -62,9 +62,8 @@ int main()
 					state=8;
 				else if(c=='/')
 					state=10;
-				else if(c==' ' || c=='\t' || c=='\n')
+				else if(c==' ' || c=='\t' || c=='\n' || c=='\r')
 					state=0;
-				else if(c=='\r'); //checks for newline in file
 				else
 					fprintf(fp2,"\n%c",c);
 				break;

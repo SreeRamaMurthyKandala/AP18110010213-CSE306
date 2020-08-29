@@ -167,7 +167,7 @@ int main()
 	fclose(fp2);
 	// To print symbol table remove these comments
 	//for(int i=0; strcmp(symb_tab[i],"")&&i<20;++i)
-    //   printf("\n%s",symb_tab[i]);
+    	//   printf("\n%s",symb_tab[i]);
 	return 0;
 }
 

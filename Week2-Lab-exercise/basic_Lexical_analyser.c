@@ -62,14 +62,13 @@ int main()
 					state=8;
 				else if(c=='/')
 					state=10;
-				else if(c==' ' || c=='\t' || c=='\n' || c=='\r')
-					state=0;
+				else if(c==' ' || c=='\t' || c=='\n' || c=='\r'); //state remains 0;
 				else
 					fprintf(fp2,"\n%c",c);
 				break;
 			case 1:
 				if(isalnum(c)||c=='_')
-				{ state=1; id[i++]=c; }
+					id[i++]=c;    //state remains 1
 				else{
 					id[i]='\0';
 					if(check_keyword(id))
@@ -86,7 +85,7 @@ int main()
 				break;
 			case 3:
 				if(isdigit(c))
-				{ num[j++]=c; state=3; }
+				    num[j++]=c; //state remains 3
 				else{
 					num[j]='\0';
 					fprintf(fp2," \n%s: number",num);
@@ -153,8 +152,7 @@ int main()
 				//	  state=11;
 				break;
 			case 12:
-				if(c=='*')
-					state=12;
+				if(c=='*'); //state remains 12
 				else if(c=='/')
 					state=0;
 				else

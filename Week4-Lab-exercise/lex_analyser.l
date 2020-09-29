@@ -1,13 +1,13 @@
 /* LEX analyser by K. Sree Rama Murthy
-• A minimum of 10 keywords of your choice
-• Identifiers with the regular expression : letter(letter | digit)*
-• Signed as well as unsigned integers
-• Signed as well as unsigned Floats in fractional as well as exponential notation.
-• Relational operators: <, >, <=, >=, ==, !=
-• Assignment Operator:=
-• Ignores everything between comments: single line as well as multiline comments as in C
-• Storing identifiers in symbol table
-• Using files for input and output.
+â€¢ A minimum of 10 keywords of your choice
+â€¢ Identifiers with the regular expression : letter(letter | digit)*
+â€¢ Signed as well as unsigned integers
+â€¢ Signed as well as unsigned Floats in fractional as well as exponential notation.
+â€¢ Relational operators: <, >, <=, >=, ==, !=
+â€¢ Assignment Operator:=
+â€¢ Ignores everything between comments: single line as well as multiline comments as in C
+â€¢ Storing identifiers in symbol table
+â€¢ Using files for input and output.
 */
 %option noyywrap
 digit [+-]?[0-9]+
@@ -17,7 +17,6 @@ exp {digit}[e]{digit}
 keywords "int"|"char"|"float"|"void"|"double"|"if"|"else"|"for"|"while"|"do"|"switch"|"case"|"break"|"unsigned"|"main"
 %{
 #include<string.h>
-int i=0,j=0,n=0;
 char symb_tab[20][30];
 void store_symb_tab(char* id);
 %}
@@ -45,7 +44,8 @@ main(int a,char **s) // command run line: a in.txt
  yyout=fopen("out.txt","w"); 
  yylex();
  fprintf(yyout,"\nSymbol table:\n");
- for(i=0; strcmp(symb_tab[i],"")&&i<20;++i)
+ int i=0;
+ for(;strcmp(symb_tab[i],"")&&i<20;++i)
    fprintf(yyout,"\n%d. %s",i+1,symb_tab[i]);
 }
 void store_symb_tab(char* id)
